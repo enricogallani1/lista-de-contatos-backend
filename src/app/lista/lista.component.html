@@ -1,0 +1,37 @@
+<link rel="lista.component" href="lista.component.css">
+
+<div class="div1">
+  
+    <h1 class="heading-mista">Lista de Contatos</h1>
+  
+  </div>
+  
+
+
+<table class="tabela">
+    <thead>
+    <tr>
+    
+        <th><h1>Nome</h1></th>
+        <th><h1>Sobrenome</h1></th>
+        <th><h1>Número</h1></th>
+    
+    </tr>
+    
+    </thead>
+    <ng-container *ngFor="let contact of contacts">
+       
+        <tr>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.number}}</td>
+        <td><a href="http://localhost:4200/edit-contact">Editar</a></td>
+       </tr> 
+    
+    </ng-container >
+    <tfoot>
+    </tfoot>
+
+    <h3><a href="http://localhost:4200/create-contact">Adicionar contato</a></h3> 
+    
+</table>

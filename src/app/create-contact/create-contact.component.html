@@ -1,0 +1,14 @@
+<h1 style="color: white">Adicionar Contato</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="firstName"  [(ngModel)]="formData.firstName"><br><br>  
+
+  <input type="text" name="lastName" [(ngModel)]="formData.lastName"><br><br>
+
+  <input type="tel" name="number" [(ngModel)]="formData.number"><br><br>
+
+  <button type="submit" >Adicionar</button>
+  <br/>
+
+  <a href="http://localhost:4200/">Contatos</a>
+</form>

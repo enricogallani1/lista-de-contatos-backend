@@ -1,0 +1,14 @@
+<h1 style="color: white">Editar</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="firstName"  [(ngModel)]="formData.firstName"><br><br>  
+
+  <input type="text" name="lastName" [(ngModel)]="formData.lastName"><br><br>
+
+  <div>{{number}}</div> <br><br>
+
+  <button type="submit" >Editar</button>
+  <br/>
+
+  <a href="http://localhost:4200/">Contatos</a>
+</form>
