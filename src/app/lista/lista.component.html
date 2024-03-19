@@ -25,7 +25,9 @@
         <td>{{contact.firstName}}</td>
         <td>{{contact.lastName}}</td>
         <td>{{contact.number}}</td>
-        <td><a href="http://localhost:4200/edit-contact">Editar</a></td>
+        <td>
+            <a href="{{'http://localhost:4200/edit-contact?number=' + contact.number + '&firstName=' + contact.firstName + '&lastName=' + contact.lastName }}">Editar</a>
+        </td>
        </tr> 
     
     </ng-container >
