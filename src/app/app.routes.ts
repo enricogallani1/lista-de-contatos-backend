@@ -8,5 +8,6 @@ export const routes: Routes = [
     { path: 'create-contact', component: CreateContactComponent},
     { path: 'lista', component: ListaComponent },
     { path: 'edit-contact', component: EditContactComponent },
+    { path: '', redirectTo: '/lista', pathMatch: 'full' },
 ];
 

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-contact',
@@ -15,7 +16,8 @@ export class EditContactComponent {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   formData = {
@@ -43,7 +45,7 @@ export class EditContactComponent {
   onSubmit() {
     this.http.put(`http://localhost:5000/contact/`, this.formData)
       .subscribe({
-        next: data => console.log(data),
+        next: data => this.router.navigate(['/lista']),
         error: error => { this.hasError = true }
       });
   }

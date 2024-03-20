@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-contact',
@@ -13,11 +14,10 @@ import { HttpClient } from '@angular/common/http';
 
 export class CreateContactComponent {
 
-  http: HttpClient
-
-  constructor(private httpClient: HttpClient) {
-    this.http = httpClient
-  }
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   formData = {
     firstName: '',
@@ -30,12 +30,10 @@ export class CreateContactComponent {
   onSubmit() {
     this.http.post(`http://localhost:5000/contact/`, this.formData)
       .subscribe({
-        next: data => console.log(data),
-        error: error => { this.hasError = true }
+        next: data => this.router?.navigate(['/lista']),
+        error: error => this.hasError = true,
     });
-    console.log("CHAAAMOOOOOUUU")
   }
-
 }
 
 
